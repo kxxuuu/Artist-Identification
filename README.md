@@ -9,35 +9,59 @@ This project aims to develop a neural network model that can accurately identify
 The dataset consists of images of artwork labeled by artists, collected from Kaggle's "Best Artworks of All Time" dataset. It includes metadata for each artist, such as the number of artworks and other relevant information.
 
 ### Components
-artists.csv: Contains metadata about the artists.
+- artists.csv: Contains metadata about the artists.
 
-images.zip: Full-sized images of artworks.
+- images.zip: Full-sized images of artworks.
 
-resized.zip: Resized images for quicker processing.
+- resized.zip: Resized images for quicker processing.
 
 
 ## Preprocessing
 Preprocessing steps include:
 
-Resizing: All images are resized to 224x224 pixels.
+- Resizing: All images are resized to 224x224 pixels.
 
-Normalization: Pixel values are normalized to the [0, 1] range.
+- Normalization: Pixel values are normalized to the [0, 1] range.
 
-Data Augmentation: Techniques such as horizontal and vertical flipping, and shearing are used to enhance the dataset and mitigate class imbalance.
+- Data Augmentation: Techniques such as horizontal and vertical flipping, and shearing are used to enhance the dataset and mitigate class imbalance.
 
-Class Weights: Calculated to address the class imbalance issue, ensuring fairness and accuracy.
+- Class Weights: Calculated to address the class imbalance issue, ensuring fairness and accuracy.
 
 
 ## Model Architecture
 The architecture is based on the ResNet50 model, pre-trained on the ImageNet dataset. Key components include:
 
-Global Average Pooling Layer: Reduces the feature map size.
-Dense Layers: Two dense layers with Dropout and Batch Normalization for regularization.
-Output Layer: A softmax activation function provides a probability distribution over the artist classes.
+- Global Average Pooling Layer: Reduces the feature map size.
+
+- Dense Layers: Two dense layers with Dropout and Batch Normalization for regularization.
+
+- Output Layer: A softmax activation function provides a probability distribution over the artist classes.
 
 
 ## Training Process
 The training process includes two phases:
 
-Initial Training: All layers are unfrozen for 10 epochs with a learning rate of 0.0001.
-Fine-Tuning: Up to 50 epochs, with the first 50 layers of ResNet50 trainable, using callbacks for EarlyStopping and ReduceLROnPlateau.
+- Initial Training: All layers are unfrozen for 10 epochs with a learning rate of 0.0001.
+
+- Fine-tuning: Up to 50 epochs, with the first 50 layers of ResNet50 trainable, using callbacks for EarlyStopping and ReduceLROnPlateau.
+
+
+## Results and Performance
+The model achieved significant improvements in artist identification:
+
+- Final Training Accuracy: 99.58%
+
+- Final Validation Accuracy: 90.77%
+
+The model's performance is evaluated using metrics such as accuracy, precision, recall, F1-score, and confusion matrices.
+
+
+## Future Work
+Future enhancements include:
+
+- Integrating Multi-Modal Data: Including textual descriptions, sizes, or textures of artworks.
+
+- Expanding Datasets: Including more artist classes and larger datasets.
+
+- Exploring Different Architectures: Experimenting with other deep learning architectures like Vision Transformers.
+
