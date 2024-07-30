@@ -6,7 +6,7 @@ This project aims to develop a neural network model that can accurately identify
 
 
 ## Data Collection
-The dataset consists of images of artwork labeled by artists, collected from Kaggle's "Best Artworks of All Time" dataset. It includes metadata for each artist, such as the number of artworks and other relevant information.
+The dataset consists of images of artwork labeled by artists, collected from Kaggle's [Best Artworks of All Time](https://www.kaggle.com/datasets/ikarus777/best-artworks-of-all-time/data) dataset. It includes metadata for each artist, such as the number of artworks and other relevant information.
 
 ### Components
 - artists.csv: Contains metadata about the artists.
