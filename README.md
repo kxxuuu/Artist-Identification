@@ -10,15 +10,21 @@ The dataset consists of images of artwork labeled by artists, collected from Kag
 
 ### Components
 artists.csv: Contains metadata about the artists.
+
 images.zip: Full-sized images of artworks.
+
 resized.zip: Resized images for quicker processing.
 
 
 ## Preprocessing
 Preprocessing steps include:
+
 Resizing: All images are resized to 224x224 pixels.
+
 Normalization: Pixel values are normalized to the [0, 1] range.
+
 Data Augmentation: Techniques such as horizontal and vertical flipping, and shearing are used to enhance the dataset and mitigate class imbalance.
+
 Class Weights: Calculated to address the class imbalance issue, ensuring fairness and accuracy.
 
 
